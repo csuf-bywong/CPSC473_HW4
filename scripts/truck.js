@@ -8,21 +8,21 @@
   }
 
   Truck.prototype.createOrder = function (order) {
-    console.log("Adding order for " + order.emailAddress);
+    console.log("Adding order for " + order.emailAddress); /* eslint-disable-line no-console */
     this.db.add(order.emailAddress, order);
   };
 
   Truck.prototype.deliverOrder = function (customerId) {
-    console.log("Delivering order for " + customerId);
+    console.log("Delivering order for " + customerId); /* eslint-disable-line no-console */
     this.db.remove(customerId);
   };
 
   Truck.prototype.printOrders = function () {
     var customerIdArray = Object.keys(this.db.getAll());
 
-    console.log("Truck #" + this.truckId + " has pending orders:");
+    console.log("Truck #" + this.truckId + " has pending orders:"); /* eslint-disable-line no-console */
     customerIdArray.forEach(function (id) {
-      console.log(this.db.get(id));
+      console.log(this.db.get(id)); /* eslint-disable-line no-console */
     }.bind(this));
   };
 
