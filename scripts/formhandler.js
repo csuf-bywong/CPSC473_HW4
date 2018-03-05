@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
   "use strict";
   var App = window.App || {};
   var $ = window.jQuery;
@@ -14,13 +14,13 @@
     }
   }
 
-  FormHandler.prototype.addSubmitHandler = function (fn) {
+  FormHandler.prototype.addSubmitHandler = function(fn) {
     console.log("Setting submit handler for form"); /* eslint-disable-line no-console */
-    this.$formElement.on("submit", function (event) {
+    this.$formElement.on("submit", function(event) {
       event.preventDefault();
 
       var data = {};
-      $(this).serializeArray().forEach(function (item) {
+      $(this).serializeArray().forEach(function(item) {
         data[item.name] = item.value;
         console.log(item.name + " is " + item.value); /* eslint-disable-line no-console */
       });
