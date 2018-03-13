@@ -25,9 +25,7 @@
 
   CheckList.prototype.addRow = function(coffeeOrder) {
     this.removeRow(coffeeOrder.emailAddress);
-
     var rowElement = new Row(coffeeOrder);
-
     this.$element.append(rowElement.$element);
   };
 
